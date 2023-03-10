@@ -1,0 +1,100 @@
+@import '../index.scss';
+
+
+
+@keyframes load_bar {
+    from {
+        width: 0%;
+        opacity: 0;
+    }
+    to {
+        width: 100%;
+        opacity: 1
+    }
+}
+
+.header{
+    height: fit-content;
+    box-sizing: border-box;
+    padding: 25px 50px 25px 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    @media screen and (max-width: $max_mobile) {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        background-color: $white;
+        width: 0%;
+        animation: load_bar 1s forwards;
+        animation-delay: 1s;
+
+    }
+
+    &__left{
+        display: flex;
+        align-items: center;
+        gap: 25px;
+
+        h1{
+            font-size: 120px;
+            text-transform: uppercase;
+            line-height: 0.8;
+            animation: opacity_pop 3s;
+
+            @media screen and (max-width: $max_mobile) {
+                font-size: 50px;
+            }
+
+            @media screen and (min-width: $min_tablette) and (max-width: $max_tablette){
+                font-size: 9vw;
+            }
+        }
+
+        svg{
+            opacity: 0;
+            animation: opacity_pop 1s forwards;
+            animation-delay: 2s;
+            @media screen and (max-width: $max_mobile) {
+                display: none;
+            }
+        }
+    }
+
+    &__right{
+        opacity: 0;
+        text-align: right;
+        width: fit-content;
+        justify-content: space-between;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 20px;
+        animation: opacity_pop 2s forwards;
+        animation-delay: 1s;
+
+        @media screen and (max-width: $max_mobile) {
+            flex-direction: row;
+            gap: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        &__top{
+            color: $font_grey;
+            font-size: 14px;
+        }
+
+
+    }
+}
