@@ -1,12 +1,19 @@
 
 *{
-  font-family: 'Helvetica'
+  font-family: 'Helvetica';
+}
+
+.Hover_mouse:hover{
+  #js_cursor{
+    width: 100px;
+  }
 }
 
 $bg_black : #121212;
 $bg_beige : #FFFDF6;
 $white: white;
 $font_grey: #B4B4B4;
+$main_red: #C72222;
 
 $max_mobile: 600px;
 $min_tablette: 601px;
@@ -21,6 +28,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 p,h1,h2,h3,h3{

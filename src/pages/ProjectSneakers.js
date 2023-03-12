@@ -1,6 +1,9 @@
 import React from 'react';
 import {Component} from 'react'
 import '../style/ProjectSneakers.scss';
+import gsap from 'gsap';
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import HeaderProject from '../components/headerProject';
 import CTA from '../components/CTA';
@@ -10,8 +13,29 @@ export default class ProjectSneakers extends React.Component {
       super(props);
       this.state = {}
     }
+
+    InitAnimation(){
+        gsap.registerPlugin(ScrollTrigger)
+
+        gsap.to(".MainBlocSecond__container__marquee",{
+            scrollTrigger:{
+                trigger: '.MainBlocSecond',
+                scrub: 0.5,
+                markers: false
+            },
+            x: -1000,
+        })
+    }
+
+    InitSlidingText(){
+
+    }
     
-    componentDidMount(){}
+    componentDidMount(){
+        this.InitAnimation()
+        this.InitSlidingText()
+        
+    }
     
     render() {
       return(
@@ -20,7 +44,7 @@ export default class ProjectSneakers extends React.Component {
                 <HeaderProject title="Sneakers" type="Personal Project" techno="VueJs/Strapi" />
                 <div className='MainBloc__container'>
                     <div className='MainBloc__container__left'>
-                        <img src='./img/patta_shoe.png' alt='Shoe' />
+                        <img className='js_shoe' src='./img/patta_shoe.png' alt='Shoe' />
                     </div>
                     <div className='MainBloc__container__right'>
                         <h3>PRESENTATION</h3><br/><br/>
@@ -31,6 +55,9 @@ export default class ProjectSneakers extends React.Component {
             </div>
             <div className='MainBlocSecond'>
                 <div className='MainBlocSecond__container'>
+                    <div className="MainBlocSecond__container__marquee">
+                        &nbsp;Open & Collect - Open & Collect - Open & Collect - Open & Collect - Open & Collect - Open & Collect - Open & Collect - Open & Collect - Open & Collect - Open & Collect - Open & Collect - Open & Collect - Open & Collect - Open & Collect - Open & Collect
+                    </div>
                 </div>
             </div>
         </div>

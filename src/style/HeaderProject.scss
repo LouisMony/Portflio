@@ -1,7 +1,5 @@
 @import '../index.scss';
 
-
-
 @keyframes load_bar {
     from {
         width: 0%;
@@ -16,7 +14,7 @@
 .header{
     height: fit-content;
     box-sizing: border-box;
-    padding: 25px 50px 25px 75px;
+    padding: 50px 50px 50px 75px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,7 +47,7 @@
             font-size: 120px;
             text-transform: uppercase;
             line-height: 0.8;
-            animation: opacity_pop 3s;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
             @media screen and (max-width: $max_mobile) {
                 font-size: 50px;
@@ -58,6 +56,11 @@
             @media screen and (min-width: $min_tablette) and (max-width: $max_tablette){
                 font-size: 9vw;
             }
+        }
+
+        .charHead{
+            transform: translateY(120px);
+            transition: all 500ms ;
         }
 
         svg{

@@ -2,17 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import App from './App';
+import Home from './App';
+import About from './pages/AboutPage';
+import Contact from './pages/ContactPage';
 import reportWebVitals from './reportWebVitals';
 
-import PageA from './pages/PageA.js'
+import Cursor from './components/cursor';
 import ProjectSneakers from './pages/ProjectSneakers';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
+    
     <Routes>
-      <Route path="/" element={<App />}></Route>
+      <Route path="/about-me" element={<About />}></Route>
+      <Route path="/contact" element={<Contact />}></Route>
+      <Route path="/" element={<Home />}></Route>
       <Route path="/sneakers" element={<ProjectSneakers />}></Route>
     </Routes>
 </BrowserRouter>
