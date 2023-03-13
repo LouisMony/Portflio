@@ -8,9 +8,6 @@ import HeaderProject from '../components/headerProject';
 
 //JS & STYLE
 import gsap from 'gsap';
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SplitType from 'split-type';
 
 import MenuJs from '../js/MenuAnimation';
 import '../style/Contact.scss';
