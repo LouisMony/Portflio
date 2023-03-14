@@ -3,17 +3,30 @@
 .Projects{
     background-color: $bg_black;
     color: $white;
+    //outline: solid 1px white;
     min-height: 100vh;
     overflow-y: hidden;
 
     &__main{
+
+        .Marquee{
+            position: fixed;
+            bottom: 0;
+            height: 300px;
+        }
+
+        .marquee{
+            align-items: end;
+        }
         &__slider{
             display: flex;
             align-items: center;
-            background-color: rgb(100, 100, 100);
+            font-weight: bold;
             justify-content: space-around;
             width: 100%;
-            height: 100%;
+            height: 100px;
+            gap: 100px;
+            padding-left: 100px;
 
             &__item{
                 text-transform: uppercase;
